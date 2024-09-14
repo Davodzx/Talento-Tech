@@ -1,0 +1,240 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   
+    <script>
+        // Ejercicio 1
+        // document.write("Numeros del 1 al 10: ->  ")
+        // for (let i=0; i<10; i++)
+        // {
+        //     document.write(i)
+        // }
+
+        // //Ejerecicio 2
+        // document.write("Numero del 10 al 1: ->:  ")
+        // for(let i=10 ; i>=0 ; i--){
+        //     document.write(i + " ")
+        // }        
+        
+        //Ejercicio 3
+        // document.write("Numeros del 2 al 20: -> ")
+        // for (i=2; i<=20; i=i+2){
+        //     document.write(i + " ")
+        // }
+
+        //ejercicio 4
+        // document.write("Numeros impares del 1 al 19 -> ")
+        // for(i=1; i<=19; i=i+2){
+        //     document.write(i + " ")
+        // }
+
+        //Ejercicio 5
+        // document.write("Tabla de multiplicar del 5 -> ")
+        // for(let i=1; i<=10; i++){
+        //     let numero = i*5
+        //     document.write(numero + " ")
+        // }
+
+        //Ejercicio 6
+        // document.write("primeros 10 numeros cuadrados -> ")
+        // for(i=1; i<=10;i++){
+        //     numero = i*i
+        //     document.write(numero + " ")
+        // }
+        
+        //Ejercicio 7
+        // document.write("Numeros del 1 al 10 con su doble")
+        // for(i=1; i<=10; i++){
+        //     document.write(i + "-" + i*2 + " ")
+        // }
+
+        //ejercicio 8
+        // document.write("10 primeros numeros en forma de lista  <br>")
+        // for(i=1; i<=10; i++){
+        //     document.write("Numero: " + i + " <br>")
+        
+        // }
+        
+        //ejercicio 9
+        // document.write("Suma de los 10 primeros numeros: ")
+        // let Total = 0
+        // for(let i=1; i<=10; i++){
+        //     Total = Total + i 
+        // }
+        // document.write(Total)
+        
+        //Ejercicio 10
+//         document.write("10 Asteriscos: ")
+//         for(i=0; i<10;i++){
+//             document.write("*")
+//         }
+
+        //Ejercicio 11
+        // document.write("Imprimir numeros de un array ")
+        // my_array = [1,2,3,4,5,6,7,8,9,10]
+        // for (const array of my_array){
+        //     document.write(array + " ")
+        // }
+
+        //ejercicio 12
+        // document.write("Total de la suma de numeros de un array ")
+        // my_array = [1,2,3,4,5,6,7,8,9,10]
+        // let Total = 0
+        // for (const array of my_array){
+        //     Total = Total + array
+        // }
+        // document.write(Total + " ")
+
+        //Ejercicio 13
+        // document.write("numero mayor de un array: ")
+        // my_array = [4, 67, 23, 89, 14, 52, 78, 11, 93, 30, 45, 61, 17, 82, 56]
+        // let mayor = 0
+        // for(const array of my_array){
+        //     if(array > mayor){
+        //         mayor = array
+        //     }
+        // }
+        // document.write(mayor)
+
+        //ejercicio 14
+        // document.write("Cuantos numeros son mayores que 10 en mi array: ")
+        // my_array = [4, 8, 23, 89, 14, 52, 78, 11, 93, 30, 45, 61, 17, 82, 56]
+        // let cantidad_numer_mayor = 0
+        // for(const array of my_array){
+        //     if(array > 10){
+        //         cantidad_numer_mayor++
+        //     }
+        // }
+        // document.write(cantidad_numer_mayor)
+
+        //ejercicio 15
+        // document.write("Numeros del 1 al 100 multiplos de 3: ")
+        // for(i=1; i<=100; i++){
+        //     if(i%3=== 0){
+        //         document.write(i+" ")
+        //     }
+            
+        // }
+
+        //ejercicio 16
+        // let array_iverso = []
+        // let array = [58, 3, 71, 90, 16, 47, 82, 29, 65, 11, 92, 7, 39, 53, 84]
+        // document.write("array ordenado: " + array + " <br>") 
+        // for(const indice of array){
+        //     array_iverso.unshift(indice)
+        // }
+        // document.write("array inverso: " + array_iverso + " ") 
+
+        //ejercicio 17
+        // document.write("Secuencia de Fibonacci: ")
+        // let secuencia = []
+        // let secuencia_numero = 0
+        // let orden = 0
+        // for(i=0;i<=10; i++){
+        //     if(i==0){
+        //         secuencia.push(0)
+        //     }
+        //     else if(i == 1)
+        //     {
+        //         secuencia.push(1)
+        //     }
+        //     else{
+        //         secuencia.push(secuencia[i-2] + secuencia[i-1])
+        //     }
+        // }
+        // document.write(secuencia)
+
+        //ejercicio 18
+        // document.write("Imprimir las palabras de una letra Resiliencia: ")
+        // let palabra = "Resiliencia"
+        // for(i=0; i < palabra.length; i++){
+        //     document.write("[" + palabra[i].toLocaleUpperCase() + "] ")
+        // }
+
+        //ejercicio 19
+        // document.write("Imprimir las palabras de una letra Resiliencia: ")
+        // let palabra = "Resiliencia"
+        // for(i=0; i < palabra.length; i++){
+        //     document.write("[" + palabra[i].toLocaleUpperCase() + "] ")
+        // }
+
+        //ejercicio 20
+        // document.write("Piramide de asteriscos <br>")
+        // let longitud = 10
+        // for(i=0; i<longitud;i++){
+        //     document.write("+")
+        //     for(j=longitud;j>longitud-i; j--){
+        //         document.write("+")
+        //     }
+        //     document.write("<br>")
+        // }
+
+        //ejercicio 21
+        // var array = [58, 3, 71, 90, 16, 47, 82, 29, 65, 11, 92, 7, 39, 53, 84]
+        // let numero = parseInt(prompt("ingrese un numero <br>")) 
+        // let check = false
+        // for(const indice of array){
+        //     if(numero == indice){
+        //         check = true
+        //     }
+        // }
+        // if (check){document.write("Si existe ese numero")}
+        // else{document.write("No existe")}
+
+        //ejercicio 22
+        // let array = [58, 3, 71, 90, 16, 47, 82, 29, 65, 11, 92, 7, 39, 53, 84]
+        // let new_array = []
+        // for(i=1; i<=array.length; i=i+2){
+        //     new_array.push(array[i])
+        // }
+        // document.write("nuevo array: " + new_array + " ") 
+
+        //ejercicio 23
+        // let array = [58, 3, 71, 90, 16, 47, 82, 29, 65, 11, 92, 7, 39, 53, 84]
+        // let promedio = 0
+        // for(i=0; i<array.length; i++){
+        //     promedio = (array[i] + promedio)
+        // }
+        // document.write("Promedio: " + promedio/array.length + " ") 
+        
+        //ejercicio 24
+        // let array = [1, 'A', 2, 'B', 3, 'C', 4, 'D', 5, 'E'];
+        // let count = 0
+        // for(i=0; i<array.length; i++){
+        //     if (typeof array[i] === "string"){
+        //         count++
+        //     }
+        //     }
+        // document.write("Cantidad de letras:" + count)
+
+        //ejercicio 25
+        // let array = [1, 'A', 2, 'B', 3, 'C', 4, 'D', 5, 'E'];
+        // let string = "empecemos"
+        // for(i=0; i<array.length; i++){
+        //         string = string + "," + array[i]
+        //     }
+        // document.write("Cantidad de letras:" + string)
+        //ejercicio 26
+        document.write("Piramide invertida: <br>")
+        let longitud = 5
+        let asteric = "*"
+        for (i = 1; i<longitud;i++){
+
+            for (j=0; j<longitud-i;j++){
+                document.write(" ")
+            }
+
+            for (k=0;k<=(i*2)-1; k++){
+                document.write("*")
+            }
+        document.write("<br>")
+
+        }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,186 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Slabo";
+}
+body{
+    color: #384047;
+    margin: 0px;
+}
+
+article{
+
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgb(122,153,231);
+    background: linear-gradient(90deg, rgba(122,153,231,1) 25%, rgba(197,142,199,1) 55%, rgba(184,104,224,1) 88%); 
+}
+form{
+
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    background: rgb(102,178,244);
+    background: linear-gradient(90deg, rgba(102,178,244,1) 44%, rgba(86,92,223,1) 76%); 
+    border-radius: 30px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px;
+}
+article h2{
+    padding: 0px;
+    text-align: center;
+    margin: 0 0 2rem;
+    color: white;
+}
+
+article input, textarea, select {
+    width: 100%;
+    padding: 10px 0;
+    color: white;
+    margin-bottom: 20px;
+    border: none;
+    border-bottom: 1px solid white;
+    outline: none;
+    background: transparent;
+}
+
+.label-Container, .text-Container, .date-container {
+    position: relative;
+    margin-bottom: 10px;
+}
+.label-Container label, .text-Container label, .date-container label{
+    position: absolute;
+    left:  0px;
+    top: 10px;
+    color: black;
+    transform: translateY(-50%);
+    transition: 0.3s ease all;
+    pointer-events: none;
+}
+.label-Container input:focus + label,
+.label-Container input:not(:placeholder-shown) + label,
+.text-Container textarea:focus + label,
+.text-Container textarea:not(:placeholder-shown) + label {
+    top: -10px; 
+    left: 5px; 
+    font-size: 12px; 
+    color: purple;
+}
+
+input[type="date"]{
+    padding-top: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+input[type="date"] label{
+    top: 100px;
+}
+input[type="date"]:focus {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+    outline: none;
+}
+
+select {
+    width: 100%; 
+    padding: 10px; 
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 15px; 
+    font-size: 1.1rem;
+    background: rgb(102,178,244); 
+    color: #333;
+    appearance: none; 
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABF0lEQVR42mJ0gIIL5YwMDA4wqFAVMoDAwMDAwDQwMDAwCBAA8yFz4+gAAHofANPDuDcAAAAAElFTkSuQmCC'); /* Icono de flecha en PNG */
+    background-repeat: no-repeat;
+    background-position: right 10px center; 
+    background-size: 10px; 
+    border-radius: white;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+  }
+  select:hover {
+    background-color: #007bff 
+  }
+  
+  select:focus {
+    background:#007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
+    outline: none;
+  }
+  
+  select option {
+    background: #007bff; 
+    color: #333; 
+  }
+  
+  select option:hover {
+    background-color: #007bff; 
+    color: white; 
+  }
+  
+
+.submit-btn {
+    background-color: #007bff; 
+    color: white; 
+    padding: 12px 20px; 
+    border: none; /* Sin borde */
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-size: 16px; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    transition: background-color 0.3s ease, transform 0.3s ease; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    border-radius: 20px;
+  }
+.submit-btn:hover {
+    background-color: #0056b3; 
+    transform: translateY(-2px); 
+}
+  
+.submit-btn:active {
+    background-color: #004494;
+    transform: translateY(0); 
+    box-shadow: 0 2px 3px rgba(0, 0, 0, 0.2); 
+}
+#message {
+    font-size: 20px; /* Ajusta el tamaño a lo que necesites */
+    /* También puedes agregar más estilos si lo deseas */
+    padding: 10px;
+    border: 1px solid #ccc;
+    background: transparent;
+    border: none;
+}
+
+#gastosContainer{
+    padding: 20px;
+    color: white;
+}
+#gastostable {
+    width: 100%;
+    border-collapse: collapse; /* Combina los bordes de las celdas */
+    margin-top: 20px; /* Espacio entre el formulario y la tabla */    
+}
+
+#gastostable th,
+#gastostable td {
+    border: 1px solid #ccc; /* Bordes ligeros para las celdas */
+    padding: 10px; /* Espaciado interno */
+    text-align: left; /* Alineación del texto a la izquierda */
+}
+
+#gastostable th {
+    background-color: #007bff; /* Color de fondo para el encabezado */
+    color: white; /* Color del texto en el encabezado */
+    font-weight: bold; /* Texto en negrita */
+}
+
+#gastostable tr:nth-child(even) {
+    background-color: #f2f2f2; /* Color de fondo alternativo para filas pares */
+}
+
+#gastostable tr:hover {
+    background-color: rgba(0, 123, 255, 0.1); /* Color al pasar el ratón por encima */
+}

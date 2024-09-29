@@ -1,0 +1,152 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Control de gastos</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Slabo">
+</head>
+
+<body>
+    <main>
+        <article>
+            <form id="registroGasto" action="/submit" method="POST" onsubmit="handleSubmit(event)">
+                <h2>Registro de Gasto</h2>
+
+                <div class="label-Container">
+                    <input type="text" name="userId" required placeholder="">
+                    <label for="userId">Número de Cédula del Usuario:</label>
+                </div>
+
+                <div class="label-Container">
+                    <input type="number" name="monto" required placeholder="">
+                    <label for="monto">Monto:</label>
+                </div>
+
+                <div class="label-Container">
+                    <input type="text" name="categoria" required placeholder="">
+                    <label for="categoria">Categoría:</label>
+                </div>
+
+                <div class="text-Container">
+                    <textarea name="descripcion" required placeholder=""></textarea>
+                    <label for="descripcion">Descripción</label>
+                </div>
+
+                <div class="date-container">
+                    <input type="date" name="fecha" required placeholder="">
+                    <label for="fecha">Fecha del Gasto:</label>
+                </div>
+
+
+                <label for="metodo">Metodo</label>
+                <select name="metodo" required>
+                    <option value="tarjeta">tarjeta</option>
+                    <option value="efectivo">efectivo</option>
+                    <option value="transferencia">transferencia</option>
+                </select>
+
+
+                <input type="submit" value="enviar" class="submit-btn"></input>
+                <input type="button" value="Ver gastos" class="submit-btn" id="gastosbutton">
+                <div id="message"></div> <!-- Contenedor para el mensaje de confirmación -->
+            </form>
+           
+            <div id="gastosContainer">
+                <h3> Lista de gastos</h3>
+                <table id="gastostable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Monto</th>
+                            <th>Categoria</th>
+                            <th>Descripcion</th>
+                            <th>fecha</th>
+                            <th>Metodo</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    </tbody>
+                </table>
+            </div>
+        </article>
+
+    </main>
+
+    <script>
+        async function handleSubmit(event) {
+            event.preventDefault(); 
+            
+            const formData = new FormData(event.target);
+            const data = Object.fromEntries(formData);
+
+            try {
+                const response = await fetch(event.target.action, {
+                    method: event.target.method,
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await response.json();
+                const messageContainer = document.getElementById('message');
+
+                if (response.ok) {
+                    messageContainer.textContent = result.message; // Mensaje de éxito
+                    messageContainer.style.color = 'green';
+                    event.target.reset(); // Reinicia el formulario
+                    setTimeout(()=> {
+                        messageContainer.textContent="";
+                    }, 3000)
+                } else {
+                    messageContainer.textContent = result.message || 'Error al registrar el gasto';
+                    messageContainer.style.color = 'red';
+                }
+            } catch (error) {
+                console.error('Error:', error);
+            }
+        }
+
+        async function fetchGastos(){
+            try{
+                const response = await fetch("/gastos")
+                const result = await response.json()
+
+                console.log(result)
+            
+            if (result.success){
+                const Gastostabla = document.getElementById("gastostable").querySelector("tbody")
+                Gastostabla.innerHTML =""
+
+                result.data.forEach(gasto => {
+                    const row = document.createElement("tr")
+
+                    row.innerHTML = 
+                    `<td>${gasto.userId}</td>
+                    <td>${gasto.monto}</td>
+                    <td>${gasto.categoria}</td>
+                    <td>${gasto.descripcion}</td>
+                    <td>${new Date(gasto.fecha).toLocaleDateString()}</td>
+                    <td>${gasto.metodo}</td>
+                `;
+                    Gastostabla.appendChild(row)
+                })
+            }
+            else{
+                console.error(result.message)
+            }
+        }
+        catch (error){
+            console.error("Error al obtener los gatos",error)
+        }
+    }
+
+    document.getElementById("gastosbutton").addEventListener("click",fetchGastos)
+
+    </script>
+</body>
+
+</html>

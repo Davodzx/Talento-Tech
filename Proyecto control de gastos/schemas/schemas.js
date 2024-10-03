@@ -1,30 +1,33 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt")
 
 const usersSchema = new mongoose.Schema({
-    userId:{
-        type: String,
-        require: true,
-    },
-    name:{
-        type:String,
-        require: true
-    },
-    email:{
-        type:String,
-        require: true
-    },
-    contraseña:{
-        type:String,
-        require: true
-    },
-    fechaCreacion:{
-        type:Date,
-        require: true
-    },
-    fechaModificacion:{
-        type:Date,
-        require:true
-    }
+    username: { type: String, required: true, unique: true },
+    password: { type: String, required: true }
+    // userId:{
+    //     type: String,
+    //     require: true,
+    // },
+    // name:{
+    //     type:String,
+    //     require: true
+    // },
+    // email:{
+    //     type:String,
+    //     require: true
+    // },
+    // contraseña:{
+    //     type:String,
+    //     require: true
+    // },
+    // fechaCreacion:{
+    //     type:Date,
+    //     require: true
+    // },
+    // fechaModificacion:{
+    //     type:Date,
+    //     require:true
+    //}
 })
 
 const gastosSchema = new mongoose.Schema({
